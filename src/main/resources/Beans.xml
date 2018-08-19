@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+    <!-- bentuk pertama annotation autowired-->
+    <context:annotation-config/>
+
+    <!--bentuk kedua annotation autowired -->
+    <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
+
+    <bean id="theTraveler" class="com.tokobuku.impl.Traveler">
+        <property name="origin" value="Jakarta"/>
+        <property name="destination" value="Surabaya"/>
+    </bean>
+
+    <bean id="car" class="com.tokobuku.impl.Car">
+        <constructor-arg type="java.lang.String">
+            <value>Mercedes-Benz</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>S-Class S550 4MATIC</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>4.7L V* Twin Turbocharger</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>Automatic 7-Speed</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>Gasonline</value>
+        </constructor-arg>
+        <property name="motion" value="My human spirit is moving to the future..."/>
+    </bean>
+
+    <bean id="theOtherCar" class="com.tokobuku.impl.Car">
+        <constructor-arg type="java.lang.String">
+            <value>BMW</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>S-Class S550 8MATIC</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>5.7L V* Twin Turbocharger</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>Automatic 8-Speed</value>
+        </constructor-arg>
+        <constructor-arg type="java.lang.String">
+            <value>Gasonline</value>
+        </constructor-arg>
+        <property name="motion" value="Racing everywhere..."/>
+    </bean>
+
+</beans>
